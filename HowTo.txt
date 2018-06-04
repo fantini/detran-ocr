@@ -1,0 +1,10 @@
+#compile
+mvn package -P prod
+
+#run
+-Djava.util.logging.SimpleFormatter.format='%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS %4$s %2$s %5$s%6$s%n'
+export LC_NUMERIC="C"
+
+#add certificate - www.detranfacil.pr.gov.br
+keytool -import -alias alias -keystore path-to-jre/lib/security/cacerts -file path-to-certificate-file
+
